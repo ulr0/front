@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.Jumbotron {
+  height: 400px;
+  background-image: url(../public/main.jpg);
+  background-size: cover;
+  padding-top: 50px;
+  color: #a994f3;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
