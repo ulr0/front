@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-import ProductCard from './ProductCard.js'
+import ProductCard from './components/ProductCard.js';
+import SignupPage from './components/SignupPage';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ function App() {
               setProducts(productList);
           })
           }}>Products</Nav.Link>
-          <Nav.Link href="#features">Sign Up</Nav.Link>
+          <Nav.Link as={Link} to="/accounts/signup">Sign Up</Nav.Link>
           <Nav.Link href="#pricing">Log In</Nav.Link>
         </Nav>
         </Container>
@@ -49,6 +49,10 @@ function App() {
               }
             </div>
           </div>
+        </Route>
+
+        <Route exact path="/accounts/signup">
+          <SignupPage/>
         </Route>
 
       </Switch>
