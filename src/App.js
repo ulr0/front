@@ -1,15 +1,10 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-import ProductCard from './components/ProductCard.js';
-import SignupPage from './components/SignupPage';
-import { useState } from 'react';
-import axios from 'axios';
+import SignupPage from './components/SignupPage.js';
+import ProductList from './components/ProductListPage.js';
 
 function App() {
-
-  let [products, setProducts] = useState([]);
-
 
   return (
     <div className="App">
@@ -18,13 +13,7 @@ function App() {
         <Container>
         <Navbar.Brand href="/">Mbly</Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link as={Link} to="/products/list" onClick={()=>{
-            axios.get("http://localhost:8000/products/list")
-            .then((response)=>{
-              let productList = response.data.product_lists;
-              setProducts(productList);
-          })
-          }}>Products</Nav.Link>
+          <Nav.Link as={Link} to="/products/list">Products</Nav.Link>
           <Nav.Link as={Link} to="/accounts/signup">Sign Up</Nav.Link>
           <Nav.Link href="#pricing">Log In</Nav.Link>
         </Nav>
@@ -40,15 +29,7 @@ function App() {
         </Route>
 
         <Route exact path="/products/list">
-          <div className="container">
-            <div className="row">
-              {
-                products.map((a, i)=>{
-                  return <ProductCard product={a} key={i} />
-                })
-              }
-            </div>
-          </div>
+          <ProductList/>
         </Route>
 
         <Route exact path="/accounts/signup">
