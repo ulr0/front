@@ -3,6 +3,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import './App.css';
 import SignupPage from './components/SignupPage.js';
 import ProductList from './components/ProductListPage.js';
+import KakaoLogin from './components/KakaoLogin';
 
 function App() {
 

@@ -1,4 +1,8 @@
 import './SignupPage.css'
+import styled from 'styled-components';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import KakaoLogin from './KakaoLogin';
 
 function SignupPage (){
 
@@ -21,7 +25,7 @@ function SignupPage (){
                     <button>Creat Account</button>
                 </div>
                 <div>
-                    <img src="/kakao_login.png"/>
+                    <KakaoLogin/>
                 </div>
             </form>
         </div>
