@@ -18,12 +18,12 @@ function ProductList (){
         <div className="container">
             <div className="row">
                 {
-                    products.map((a)=>{
+                    products.map((a, i)=>{
                         return (
-                            <div className="col-4">
+                            <div key = {i} className="col-4">
                                 <img src={a.main_image_url} />
                                 <h6>{a.product_name}</h6>
-                                <p>{a.price}</p>
+                                <p>{Number(a.price)}원</p>
                             </div>
                         )
                     })
